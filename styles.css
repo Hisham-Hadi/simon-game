@@ -6,8 +6,9 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin:  5% 5% 2%;
   color: #FEF2BF;
+  line-height: 2;
 }
 
 .container {
