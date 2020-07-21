@@ -1,4 +1,5 @@
 
+
 var buttonColors = ["red","blue","green","yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
@@ -65,6 +66,15 @@ $(document).keydown(function(){
     if (!started) {
         nextSequence();
         started = true;
+        $(".start").css("visibility","hidden");
+    }
+})
+
+$(".start").click(function(){
+    if (!started) {
+        nextSequence();
+        started = true;
+        $(".start").css("visibility","hidden");
     }
 })
 
@@ -87,12 +97,14 @@ function checkAnswer() {
     } else {
         console.log("wrong");
         started = false;
+        $(".start").css("visibility","visible");
+        $(".start").text("Restart");
         $("body").addClass("game-over");
 
         wrongSound = new Audio("sounds/wrong.mp3");
         wrongSound.play();
 
-        $("h1").text("Game over. Press any key to restart.");
+        $("h1").text("Game over. Press any key or click");
 
         setTimeout(function(){
             $("body").removeClass("game-over");
@@ -104,4 +116,5 @@ function checkAnswer() {
     }
 
 }
+
 
